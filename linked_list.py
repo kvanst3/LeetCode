@@ -44,7 +44,7 @@ class MyLinkedList():
         If index equals to the length of linked list, the node will be appended to the end of linked list. 
         If index is greater than the length, the node will not be inserted.
         """
-        if index < 0 or index >= self.size:
+        if index < 0 or index > self.size:
             return 
         if index == 0:
             self.AddAtHead(val)
@@ -74,3 +74,10 @@ class MyLinkedList():
         self.size -= 1
 
 x = MyLinkedList()
+x.AddAtHead(7)
+x.AddAtHead(2)
+x.AddAtHead(1)
+x.addAtIndex(3,0)
+x.deleteAtIndex(2)
+x.AddAtHead(6)
+x.get(4)

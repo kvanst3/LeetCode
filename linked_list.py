@@ -20,3 +20,12 @@ class MyLinkedList():
                 curr = curr.next
             curr.next = new_node
         self.size += 1
+
+    def AddAtHead(self, val):
+        new_node = Node(val)
+        new_node.next = self.head
+        self.head = new_node
+
+        self.size += 1
+        
+

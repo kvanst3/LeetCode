@@ -27,5 +27,7 @@ class MyLinkedList():
         self.head = new_node
 
         self.size += 1
-        
 
+    def get(self, index):
+        if index < 0 or index >= self.size:
+            

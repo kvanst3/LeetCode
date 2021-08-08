@@ -48,11 +48,9 @@ class MyLinkedList():
             return 
         if index == 0:
             self.AddAtHead(val)
-        elif index + 1 == self.size:
-            self.AddAtTail(val)
         else:
             curr = self.head
-            for _ in index -1:
+            for _ in range(index -1):
                 curr = curr.next
             new_node = Node(val)
             new_node.next = curr.next
@@ -60,7 +58,19 @@ class MyLinkedList():
             self.size += 1
         
 
-    def deleteAtIndex(self, index: int) -> None:
+    def deleteAtIndex(self, index: int):
         """
         Delete the index-th node in the linked list, if the index is valid.
         """
+        if index < 0 or index >= self.size:
+            return 
+        curr = self.head
+        if index == 0:
+            self.head = curr.next
+        else:
+            for _ in range(index -1):
+                curr = curr.next
+            curr.next = curr.next.next
+        self.size -= 1
+
+x = MyLinkedList()

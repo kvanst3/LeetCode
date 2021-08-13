@@ -6,7 +6,11 @@ class Solution:
         d = [int(a) for a in str(an_integer)]
         return d
 
-    def plusOneFaster(self, digits):
+    # One line 
+    def plusOneLiner(self, digits):
+        return [int(x) for x in  str(int(''.join(map(str,digits)))+1) ]
+
+    def plusOneRecursive(self, digits):
         if digits[-1] == 9:
             if len(digits) == 1:
                 return [1, 0]
@@ -15,5 +19,16 @@ class Solution:
             digits[-1] += 1
         return digits
 
+    def plusOneFastest(self, digits):
+        rev = digits[::-1]
+        carry = 1
+        for i in range(len(digits)):
+            val = rev[i] + carry
+            rev[i] = val % 10
+            carry = val // 10
+        if carry:
+            rev.append(1)
+        return rev[::-1]
+
 x = Solution()
-print(x.plusOneFaster([1,9,9]))
+print(x.plusOneRecursive([1,9,9]))

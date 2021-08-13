@@ -31,4 +31,4 @@ class Solution:
         return rev[::-1]
 
 x = Solution()
-print(x.plusOneRecursive([1,9,9]))
+print(x.plusOneFastest([1,9,9]))
